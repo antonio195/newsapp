@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.antoniocostadossantos.newsappmvp.ui.fragments.home.HomeFragment"
+        android:label="Home" >
+        <action
+            android:id="@+id/action_homeFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.antoniocostadossantos.newsappmvp.ui.fragments.favorite.FavoriteFragment"
+        android:label="Favoritos" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.antoniocostadossantos.newsappmvp.ui.fragments.search.SearchFragment"
+        android:label="Pesquisar" >
+        <action
+            android:id="@+id/action_searchFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.antoniocostadossantos.newsappmvp.ui.fragments.webView.WebViewFragment"
+        android:label="Noticia" >
+        <argument
+            android:name="article"
+            app:argType="com.antoniocostadossantos.newsappmvp.local.model.Article" />
+    </fragment>
+</navigation>
